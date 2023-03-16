@@ -23,16 +23,21 @@ import Svg from "react-native-svg";
 import LoadBar from "./LoadComponent";
 import * as Progress from "react-native-progress";
 
+const uChoice = []
+
 export default function GenresScreen() {
   // tableau contenaire categories de jeux
   const Vign = [
-    { text: "Adventure", img: Adventure },
-    { text: "Puzzle", img: Memory },
-    { text: "Logique", img: Logique },
-    { text: "Card", img: Card },
-    { text: "Education", img: Education },
-    { text: "Dice", img: Dice },
+    { text: "Adventure", img: Adventure, cat: "adventure" },
+    { text: "Puzzle", img: Memory, cat: "puzzle" },
+    { text: "Logique", img: Logique, cat: "logique" },
+    { text: "Card", img: Card, cat: "card" },
+    { text: "Education", img: Education, cat: "education" },
+    { text: "Dice", img: Dice, cat: "dice" },
   ];
+
+  /*const initialUChoice = [];
+  const [uChoice, setuChoice] = React.useState(initialUChoice);*/
 
   const [SecondActiveIndex, setSecondActiveIndex] = React.useState([]);
   const navigation = useNavigation();
@@ -46,8 +51,12 @@ export default function GenresScreen() {
   function Select(index) {
     if (SecondActiveIndex.includes(index)) {
       setSecondActiveIndex((curr) => curr.filter((elem) => elem !== index));
+      uChoice.splice(uChoice.length-1)
+      /*setuChoice(uChoice)*/
     } else {
       setSecondActiveIndex((curr) => [...curr, index]);
+      uChoice.push(Vign[index].cat);
+      /*setuChoice(uChoice)*/
     }
   }
 
@@ -55,7 +64,7 @@ export default function GenresScreen() {
     <View style={styles.container}>
       <View style={{ height: 70 }} />
 
-      <View>
+      <View> 
         <Progress.Circle
           // indeterminate={true}
           animated={true}
@@ -122,7 +131,8 @@ export default function GenresScreen() {
       <View style={styles.Bottom_section}>
         <TouchableOpacity
           style={styles.Bottom_Button}
-          onPress={() => navigation.navigate("HowLong")}
+          onPress={() => {
+          navigation.navigate("HowLong")}}
         >
           <Text
             style={{
@@ -221,3 +231,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+export {uChoice};

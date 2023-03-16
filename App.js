@@ -13,6 +13,8 @@ import FourthPage from "./screens/FourthPage";
 import FivePage from "./screens/FivePage";
 import GameInfoPage from './screens/GameInfoPage';
 import Search from './screens/Search';
+import ProfilPage from './screens/ProfilPage';
+import RulesPage from './screens/RulesPages';
 
 // Les differents screens
 function StartScreen({ navigation }) {
@@ -82,6 +84,8 @@ export default function App() {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="GameInfo" component={GameInfoPage} />
           <Stack.Screen name="Search" component={Search} />
+          <Stack.Screen name="ProfilPage" component={ProfilPage} />
+          <Stack.Screen name="RulesPage" component={RulesPage} />
         </Stack.Navigator>
       </NavigationContainer>
     </TailwindProvider>

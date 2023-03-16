@@ -5,6 +5,7 @@ import { MaterialCommunityIcons, Ionicons, Fontisto, Feather } from '@expo/vecto
 import Header from '../components/header';
 import Footer from '../components/footer';
 import Badge from '../components/badge';
+import RulesPage from '../screens/RulesPages'
 
 const GameInfoPage = () => {
 
@@ -16,6 +17,10 @@ const GameInfoPage = () => {
         })
     }, [])
 
+    const handlePress = () => {
+      navigation.navigate('RulesPage');
+    }
+
   return (
     <SafeAreaView style={styles.container}>
       <Header showButton={true}/>
@@ -23,7 +28,7 @@ const GameInfoPage = () => {
         <Image style={styles.gameImage} source={require('../assets/image/7_wonders.webp')} />
         <Text style={styles.gameMatch}>89% match</Text>
         {/* <Text style={styles.gameTitle}>7 Wonders</Text> */}
-        <TouchableOpacity style={styles.buttonRules}>
+        <TouchableOpacity style={styles.buttonRules} onPress={handlePress}>
             <Text style={styles.buttonText}>Rules of the game</Text>
         </TouchableOpacity>
         {/* <View style={styles.buttonContainer}>
@@ -53,11 +58,11 @@ const GameInfoPage = () => {
       <View style={styles.section}>
         <Text style={styles.title}>My suggestions</Text>
         <ScrollView showsHorizontalScrollIndicator={false} horizontal={true}>
-          <Image style={styles.image} source={require('../assets/image/7_wonders.webp')} />
-          <Image style={styles.image} source={require('../assets/image/7_wonders.webp')} />
-          <Image style={styles.image} source={require('../assets/image/7_wonders.webp')} />
-          <Image style={styles.image} source={require('../assets/image/7_wonders.webp')} />
-          <Image style={styles.image} source={require('../assets/image/7_wonders.webp')} />
+          <Image style={styles.image} source={listRecommandation[0].image} />
+          <Image style={styles.image} source={listRecommandation[1].image} />
+          <Image style={styles.image} source={listRecommandation[2].image} />
+          <Image style={styles.image} source={listRecommandation[3].image} />
+          <Image style={styles.image} source={listRecommandation[4].image} />
         </ScrollView>
       </View>
       <Footer/>

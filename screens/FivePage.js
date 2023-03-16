@@ -65,7 +65,7 @@ export default function App() {
           style={styles.Bottom_Button}
           onPress={() =>
             navigation.navigate("Home") &
-            alert("vos informations ont été enregistrer ;)")
+            console.log("vos informations ont été enregistrer ;)")
           }
         >
           <Text

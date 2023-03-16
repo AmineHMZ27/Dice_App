@@ -1,5 +1,5 @@
 import React, { useState, useLayoutEffect } from 'react';
-import { StyleSheet, View, TextInput, TouchableOpacity, SafeAreaView, Modal, Text, Switch } from 'react-native';
+import { StyleSheet, View, TextInput, ScrollView, TouchableOpacity, SafeAreaView, Modal, Text, Switch, Image } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import Header from '../components/header';
@@ -77,7 +77,38 @@ const Search = () => {
           </TouchableOpacity>
         </View>
       </Modal>
-      {/* <Footer/> */}
+      {/* ------------------------------------------------------------------------------------ */}
+      <ScrollView showsHorizontalScrollIndicator={true} horizontal={false}>
+        <View style={styles.Top_Profil}>
+          
+
+        </View>
+        <View style={styles.Top_Profil}>
+
+
+        </View>
+        <View style={styles.Top_Profil}>
+
+
+        </View>
+        <View style={styles.Top_Profil}>
+
+
+        </View>
+        <View style={styles.Top_Profil}>
+
+
+        </View>
+        <View style={styles.Top_Profil}>
+
+
+        </View>
+        <View style={styles.Top_Profil}>
+
+
+        </View>
+      </ScrollView>
+      <Footer/>
     </SafeAreaView>
   );
 };
@@ -85,6 +116,7 @@ const Search = () => {
 const styles = StyleSheet.create({
 
   BigContainer: {
+    flex: 1,
     backgroundColor: 'white',
     },
 
@@ -131,6 +163,24 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#007aff',
     textAlign: 'center',
+  },
+  Top_Profil: {
+    height: 120,
+    width: 350,
+    marginLeft: "9%",
+    borderRadius: 20,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    marginTop: 10,
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
+    backgroundColor: "#fff",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 
